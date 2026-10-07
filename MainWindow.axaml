@@ -1,0 +1,122 @@
+<!-- <Window xmlns="https://github.com/avaloniaui" -->
+<!--         xmlns:x='http://schemas.microsoft.com/winfx/2006/xaml' -->
+<!--         xmlns:gpuInterop="clr-namespace:GpuInterop" -->
+<!--         xmlns:d3DDemo="clr-namespace:GpuInterop.D3DDemo" -->
+<!--         xmlns:vulkanDemo="clr-namespace:GpuInterop.VulkanDemo" -->
+<!--         x:Class="GpuInterop.MainWindow"> -->
+<!--       <d3DDemo:D3D11DemoControl/> -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!--   ~1~ <gpuInterop:GpuDemo> @1@ -->
+<!--   ~1~   <gpuInterop:GpuDemo.Demo> @1@ -->
+<!--   ~1~     <d3DDemo:D3D11DemoControl/> @1@ -->
+<!--   ~1~     ~2~ <vulkanDemo:VulkanDemoControl/> @2@ @1@ -->
+<!--   ~1~   </gpuInterop:GpuDemo.Demo> @1@ -->
+<!--   ~1~ </gpuInterop:GpuDemo> @1@ -->
+<!-- </Window> -->
+
+
+
+
+
+
+<!-- -->
+<!-- -->
+<!-- <Window xmlns="https://github.com/avaloniaui" -->
+<!--         xmlns:x='http://schemas.microsoft.com/winfx/2006/xaml' -->
+<!--         xmlns:gpuInterop="clr-namespace:GpuInterop" -->
+<!--         xmlns:d3DDemo="clr-namespace:GpuInterop.D3DDemo" -->
+<!--          -->
+<!--          -->
+<!--         xmlns:vulkanDemo="clr-namespace:GpuInterop.VulkanDemo" -->
+<!--         x:Class="GpuInterop.MainWindow"> -->
+<!--     <Grid> -->
+<!--         ~1~ The GPU interop control fills the whole window @1@ -->
+<!--         ~1~ <d3DDemo:D3D11DemoControl/> @1@ -->
+<!-- -->
+<!--         ~1~ <local:AvaloniaInteropRenderer x:Name="my_render" /> @1@ -->
+<!--          -->
+<!--          -->
+<!--          -->
+<!--          -->
+    
+<!--              -->
+<!--         <StackPanel Orientation="Horizontal" -->
+<!--                     HorizontalAlignment="Left" -->
+<!--                     VerticalAlignment="Top" -->
+<!--                     Margin="16" -->
+<!--                     Spacing="8"> -->
+<!--             <Button Name="OverlayButton1" -->
+<!--                     Content="Button 1" -->
+<!--                     Background="BurlyWood" -->
+<!--                     /> -->
+<!--             <Button Name="OverlayButton2" -->
+<!--                     Background="Aqua" -->
+<!--                     Content="Button 2" -->
+<!--                     /> -->
+<!--         </StackPanel> -->
+<!--     </Grid> -->
+<!-- </Window> -->
+
+
+
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:GpuInterop.test"
+        xmlns:d3DDemo="clr-namespace:GpuInterop.D3DDemo"
+        x:Class="GpuInterop.MainWindow"
+        Title="GpuInterop">
+    <Grid>
+        <!-- <local:AvaloniaInteropRenderer_2 x:Name="my_render" /> -->
+        
+        
+        <!-- <local:AvaloniaInteropRenderer x:Name="my_render" /> -->
+        <!-- <d3DDemo:D3D11DemoControl/> -->
+        
+        <!-- <local:AvaloniaInteropRenderer_2 x:Name="my_render" />  -->
+        <local:D11InteropRenderer x:Name="my_render" /> 
+        
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="16"
+                    Spacing="8">
+            <Button 
+                    Content="Button 1"
+                    Background="BurlyWood" />
+            <Button 
+                    Content="Button 2"
+                    Background="Aqua" />
+        </StackPanel>
+        
+        
+        
+      
+        
+        
+        
+        
+        <!-- -->
+        <!-- <ContentControl> -->
+        <!--     <ContentControl.Template> -->
+        <!--         <ControlTemplate> -->
+        <!--             <Grid> -->
+        <!--                 <local:AvaloniaInteropRenderer_2 /> -->
+        <!--                 <ContentPresenter Content="{TemplateBinding Content}" /> -->
+        <!--             </Grid> -->
+        <!--         </ControlTemplate> -->
+        <!--     </ContentControl.Template> -->
+        <!-- -->
+        <!--     <StackPanel Orientation="Horizontal" -->
+        <!--                 HorizontalAlignment="Left" -->
+        <!--                 VerticalAlignment="Top" -->
+        <!--                 Margin="16" -->
+        <!--                 Spacing="8"> -->
+        <!--         <Button Name="OverlayButton1" Content="Button 1" Background="BurlyWood" /> -->
+        <!--         <Button Name="OverlayButton2" Content="Button 2" Background="Aqua" /> -->
+        <!--     </StackPanel> -->
+        <!-- </ContentControl> -->
+        
+    </Grid>
+</Window>

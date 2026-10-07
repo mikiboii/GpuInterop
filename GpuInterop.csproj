@@ -1,0 +1,112 @@
+﻿<!--<Project Sdk="Microsoft.NET.Sdk">-->
+
+<!--  <PropertyGroup>-->
+<!--    <OutputType>Exe</OutputType>-->
+<!--      <TargetFramework>net8.0</TargetFramework>-->
+<!--    <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>-->
+<!--    <Nullable>enable</Nullable>-->
+<!--    <GenerateDocumentationFile>false</GenerateDocumentationFile>-->
+<!--    <UseD3DCompiler>true</UseD3DCompiler>-->
+<!--    <UseSharpDXMathematics>true</UseSharpDXMathematics>-->
+<!--    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>-->
+<!--  </PropertyGroup>-->
+
+<!--  <ItemGroup>-->
+<!--    <ProjectReference Include="..\..\src\Avalonia.Diagnostics\Avalonia.Diagnostics.csproj" />-->
+<!--    <ProjectReference Include="..\..\src\Avalonia.Controls.ColorPicker\Avalonia.Controls.ColorPicker.csproj" />-->
+<!--    <ProjectReference Include="..\..\src\Avalonia.Controls.DataGrid\Avalonia.Controls.DataGrid.csproj" />-->
+<!--    <ProjectReference Include="..\..\src\Avalonia.Fonts.Inter\Avalonia.Fonts.Inter.csproj" />-->
+<!--    <ProjectReference Include="..\..\src\Avalonia.Themes.Fluent\Avalonia.Themes.Fluent.csproj" />-->
+<!--  </ItemGroup>-->
+
+<!--  <ItemGroup>-->
+<!--    <Content Include="D3DDemo\MiniCube.fx">-->
+<!--      <CopyToOutputDirectory>Always</CopyToOutputDirectory>-->
+<!--    </Content>-->
+<!--  </ItemGroup>-->
+
+<!--  <ItemGroup>-->
+<!--    <PackageReference Include="Silk.NET.Vulkan" Version="2.16.0" />-->
+<!--    <PackageReference Include="Silk.NET.Vulkan.Extensions.EXT" Version="2.16.0" />-->
+<!--    <PackageReference Include="Silk.NET.Vulkan.Extensions.KHR" Version="2.16.0" />-->
+<!--    <PackageReference Include="System.Reactive" Version="5.0.0" />-->
+<!--  </ItemGroup>-->
+
+<!--  <ItemGroup>-->
+<!--    <Folder Include="VulkanDemo\Assets\Shaders\Assets" />-->
+<!--  </ItemGroup>-->
+
+<!--  <ItemGroup>-->
+<!--    <Compile Include="..\..\src\Avalonia.Base\Rendering\SwapchainBase.cs" />-->
+<!--    <None Remove="VulkanDemo\Assets\Shaders\frag.spirv" />-->
+<!--    <EmbeddedResource Include="VulkanDemo\Assets\Shaders\frag.spirv" />-->
+<!--    <None Remove="VulkanDemo\Assets\Shaders\vert.spirv" />-->
+<!--    <EmbeddedResource Include="VulkanDemo\Assets\Shaders\vert.spirv" />-->
+<!--    <EmbeddedResource Include="../ControlCatalog/Pages/teapot.bin" />-->
+<!--  </ItemGroup>-->
+<!--  -->
+<!--  <Import Project="..\..\build\SampleApp.props" />-->
+<!--  <Import Project="..\..\build\ReferenceCoreLibraries.props" />-->
+<!--  <Import Project="..\..\build\BuildTargets.targets" />-->
+<!--  <Import Project="..\..\build\SharpDX.props" />-->
+<!--</Project>-->
+
+
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <AvaloniaAccessUnstablePrivateApis>true</AvaloniaAccessUnstablePrivateApis>
+        <Avalonia_I_Want_To_Use_Private_Apis_In_Nuget_Package_And_Promise_To_Pin_The_Exact_Avalonia_Version_In_Package_Dependency>true</Avalonia_I_Want_To_Use_Private_Apis_In_Nuget_Package_And_Promise_To_Pin_The_Exact_Avalonia_Version_In_Package_Dependency>
+    </PropertyGroup>
+
+    <ItemGroup>
+<!--         Use Avalonia packages that match the repo version (11.2.6) -->
+        <PackageReference Include="Avalonia" Version="11.2.6" />
+        <PackageReference Include="Avalonia.Desktop" Version="11.2.6" />
+        <PackageReference Include="Avalonia.Diagnostics" Version="11.2.6" />
+        <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.6" />
+        <PackageReference Include="FFmpeg.AutoGen" Version="7.0.0" />
+        
+
+
+
+<!--        <PackageReference Include="Avalonia" Version="12.0.0" />-->
+<!--        <PackageReference Include="Avalonia.Desktop" Version="12.0.0" />-->
+<!--        <PackageReference Include="Avalonia.Themes.Fluent" Version="12.0.0" />-->
+<!--        &lt;!&ndash; Replaced Avalonia.Diagnostics &ndash;&gt;-->
+<!--        <PackageReference Include="AvaloniaUI.DiagnosticsSupport" Version="2.2.0" />-->
+<!--        &lt;!&ndash; Added for text shaping &ndash;&gt;-->
+<!--        <PackageReference Include="Avalonia.HarfBuzz" Version="12.0.0" />-->
+
+
+
+
+        <PackageReference Include="SharpDX" Version="4.2.0" />
+        <PackageReference Include="SharpDX.D3DCompiler" Version="4.2.0" />
+        <PackageReference Include="SharpDX.Direct2D1" Version="4.2.0" />
+        <PackageReference Include="SharpDX.Direct3D11" Version="4.2.0" />
+        <PackageReference Include="SharpDX.DXGI" Version="4.2.0" />
+        <PackageReference Include="SharpDX.Mathematics" Version="4.2.0" />
+        <!-- Add other packages the sample needs -->
+        <PackageReference Include="Silk.NET.Vulkan" Version="2.16.0" />
+        <PackageReference Include="Silk.NET.Vulkan.Extensions.EXT" Version="2.16.0" />
+        <PackageReference Include="Silk.NET.Vulkan.Extensions.KHR" Version="2.16.0" />
+        <PackageReference Include="System.Reactive" Version="5.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <!-- Copy sample shader/assets into the standalone project and ensure they are copied to output -->
+        <Content Include="VulkanDemo\Assets\Shaders\frag.spirv">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="VulkanDemo\Assets\Shaders\vert.spirv">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+ 
+</Project>
