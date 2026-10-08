@@ -1,0 +1,13 @@
+
+# dependencies
+/Androidplayer.exe
+/Androidplayer.pdb
+/obj
+/bin/Release
+/bin/Debug
+bin/linux/
+bin/
+publish-test/
+publish/
+notes/
+run_linux.ps1

@@ -66,7 +66,16 @@
         xmlns:local="clr-namespace:GpuInterop.test"
         xmlns:d3DDemo="clr-namespace:GpuInterop.D3DDemo"
         x:Class="GpuInterop.MainWindow"
-        Title="GpuInterop">
+        Title="GpuInterop"
+        
+        CanResize="True"
+
+        SystemDecorations="BorderOnly"
+           
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaChromeHints="NoChrome"
+        
+        >
     <Grid>
         <!-- <local:AvaloniaInteropRenderer_2 x:Name="my_render" /> -->
         
